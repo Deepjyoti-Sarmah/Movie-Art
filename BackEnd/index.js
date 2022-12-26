@@ -9,17 +9,19 @@ const MongoClient = mongodb.MongoClient
 // const mongo_username = process.env['MONGO_USERNAME']
 // const mongo_password = process.env['MONGO_PASSWORD']
 // const uri = `mongodb+srv://${mongo_username}:${mongo_password}@cluster0.ayr9czp.mongodb.net/?retryWrites=true&w=majority`
-const uri = process.env.MOVIEART_URI;
+// const uri = process.env.MOVIEART_URI;
+const uri = "mongodb://mongo-db/MovieArt"
 
-const port = 8000
+const port = 5000
 
 MongoClient.connect(
   uri,
-  {
-    maxPoolSize: 50,
-    wtimeoutMS: 2500,
-    useNewUrlParser: true
-  })
+  // {
+  //   maxPoolSize: 50,
+  //   wtimeoutMS: 2500,
+  //   useNewUrlParser: true
+  // }
+  )
   .catch(err => {
     console.error(err.stack)
     process.exit(1)
